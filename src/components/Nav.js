@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
-  Route,
   Switch,
-  Link
+  NavLink
 } from 'react-router-dom';
+import ResponseContainer from './ResponseContainer';
 
 
 const Nav = () => (
@@ -12,57 +12,33 @@ const Nav = () => (
     <Router>
       <div>
         <div className="pure-menu pure-menu-horizontal">
-          <Link to="/" className="pure-menu-heading pure-menu-link">Star Wars</Link>
+          <NavLink to="/" className="pure-menu-heading pure-menu-link">Star Wars</NavLink>
           <ul className="pure-menu-list">
             <li className="pure-menu-item">
-              <Link to="/films" className="pure-menu-link">Films</Link>
+              <NavLink to="/films" className="pure-menu-link">Films</NavLink>
             </li>
             <li className="pure-menu-item">
-              <Link to="/people" className="pure-menu-link">People</Link>
+              <NavLink to="/people" className="pure-menu-link">People</NavLink>
             </li>
             <li className="pure-menu-item">
-              <Link to="/planets" className="pure-menu-link">Planets</Link>
+              <NavLink to="/planets" className="pure-menu-link">Planets</NavLink>
             </li>
             <li className="pure-menu-item">
-              <Link to="/species" className="pure-menu-link">Species</Link>
+              <NavLink to="/species" className="pure-menu-link">Species</NavLink>
             </li>
             <li className="pure-menu-item">
-              <Link to="/starships" className="pure-menu-link">Starships</Link>
+              <NavLink to="/starships" className="pure-menu-link">Starships</NavLink>
             </li>
             <li className="pure-menu-item">
-              <Link to="/vehicles" className="pure-menu-link">Vehicles</Link>
+              <NavLink to="/vehicles" className="pure-menu-link">Vehicles</NavLink>
             </li>
           </ul>
         </div>
-        <Switch>
-          <Route exact path="/" render={ () => <h1>Hello Star Wars!</h1> } />
-          <Route exact path="/films" render={ () => <h1>Films</h1> } />
-          <Route exact path="/people" render={ () => <h1>People</h1> } />
-          <Route exact path="/planets" render={ () => <h1>Planets</h1> } />
-          <Route exact path="/species" render={ () => <h1>Species</h1> } />
-          <Route exact path="/starships" render={ () => <h1>Starships</h1> } />
-          <Route exact path="/vehicles" render={ () => <h1>Vehicles</h1> } />
-          <Route render={ () => <h1 className="text-danger">404 Not Found</h1> } />
-        </Switch>
+        <ResponseContainer />
       </div>
     </Router>
   </div>
 );
 
 
-
-
 export default Nav;
-
-
-
-
-
-
-
-
-
-
-
-
-
