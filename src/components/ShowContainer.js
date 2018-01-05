@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Route,
   Switch,
@@ -8,7 +8,7 @@ import Response from './Response';
 import Home from './Home';
 
 
-class ShowContainer extends Component {
+class ShowContainer extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,6 @@ class ShowContainer extends Component {
 
   async componentDidMount() {
     await this._swapi();
-    this.forceUpdate();
   }
 
   render() {
